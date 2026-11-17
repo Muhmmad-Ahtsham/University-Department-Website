@@ -1,0 +1,170 @@
+/* ===== Department of Computer Science - shared stylesheet ===== */
+:root {
+  --navy: #12284c;
+  --blue: #1d4ed8;
+  --gold: #d4a017;
+  --light: #f4f6fb;
+  --text: #1f2937;
+  --muted: #5b6475;
+  --white: #ffffff;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+/* Skip navigation (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--gold);
+  color: #000;
+  padding: .6rem 1rem;
+  z-index: 100;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0; }
+
+/* Accessible focus states */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Header + navigation */
+header.site-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.5rem 0;
+}
+.site-header .brand h1 { margin: 0; font-size: 1.5rem; }
+.site-header .brand p  { margin: 0 0 .75rem; color: #c9d4ea; font-size: .95rem; }
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+nav a {
+  display: block;
+  padding: .65rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+nav a:hover { background: rgba(255,255,255,.15); }
+nav a[aria-current="page"] { background: var(--light); color: var(--navy); font-weight: 700; }
+
+/* Layout */
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+}
+.page-wrap.single { grid-template-columns: 1fr; }
+@media (max-width: 800px) { .page-wrap { grid-template-columns: 1fr; } }
+
+main section, aside section, article.card, .card {
+  background: var(--white);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+h2 { color: var(--navy); margin-top: 0; border-bottom: 3px solid var(--gold); padding-bottom: .3rem; display: inline-block; }
+h3 { color: var(--blue); margin-bottom: .25rem; }
+
+figure { margin: 0 0 1rem; }
+figure img, .hero-img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+figcaption { font-size: .85rem; color: var(--muted); margin-top: .35rem; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: left; font-weight: 700; padding: .5rem 0; color: var(--navy); }
+th, td { padding: .6rem .75rem; border: 1px solid #d5dbe8; text-align: left; vertical-align: top; }
+thead th { background: var(--navy); color: var(--white); }
+tbody tr:nth-child(even) { background: #f0f4fb; }
+tbody th { background: #e6ecf8; }
+
+/* News */
+time { color: var(--muted); font-size: .9rem; }
+.tag { display: inline-block; background: var(--gold); color: #000; font-size: .75rem; padding: .1rem .5rem; border-radius: 99px; font-weight: 600; }
+
+/* Forms */
+form .field { margin-bottom: 1rem; }
+label { display: block; font-weight: 600; margin-bottom: .25rem; }
+input, select, textarea {
+  width: 100%;
+  padding: .6rem;
+  border: 1px solid #aab4c8;
+  border-radius: 6px;
+  font: inherit;
+}
+fieldset { border: 1px solid #d5dbe8; border-radius: var(--radius); margin-bottom: 1rem; }
+legend { font-weight: 700; color: var(--navy); padding: 0 .4rem; }
+button, .btn {
+  background: var(--blue);
+  color: var(--white);
+  border: 0;
+  padding: .7rem 1.4rem;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .btn:hover { background: var(--navy); }
+
+/* Map placeholder */
+.map-placeholder {
+  background: repeating-linear-gradient(45deg, #dfe7f5, #dfe7f5 12px, #eaf0fa 12px, #eaf0fa 24px);
+  border: 2px dashed var(--blue);
+  border-radius: var(--radius);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--navy);
+  padding: 1rem;
+}
+
+video, audio { width: 100%; border-radius: var(--radius); }
+
+footer.site-footer {
+  background: var(--navy);
+  color: #c9d4ea;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+footer a { color: var(--gold); }
+
+/* Print stylesheet (printable course catalog) */
+@media print {
+  .skip-link, nav, aside, .no-print, footer, button { display: none !important; }
+  body { background: #fff; font-size: 11pt; }
+  header.site-header { background: #fff; color: #000; padding: 0; }
+  .site-header .brand p { color: #000; }
+  .page-wrap { display: block; padding: 0; }
+  main section { box-shadow: none; padding: 0; }
+  thead th { background: #ddd !important; color: #000; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; }
+}

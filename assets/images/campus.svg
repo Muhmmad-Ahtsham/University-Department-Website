@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+  <title id="t">Computer Science building illustration</title>
+  <desc id="d">A stylised illustration of a university building with a clock tower under a blue sky.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb2ff"/>
+      <stop offset="1" stop-color="#dcebff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="360" fill="url(#sky)"/>
+  <circle cx="680" cy="70" r="34" fill="#ffd45e"/>
+  <ellipse cx="160" cy="80" rx="60" ry="18" fill="#fff" opacity=".85"/>
+  <ellipse cx="200" cy="68" rx="40" ry="14" fill="#fff" opacity=".85"/>
+  <rect y="290" width="800" height="70" fill="#4f9d5a"/>
+  <!-- main building -->
+  <rect x="180" y="150" width="440" height="140" fill="#c9a27a"/>
+  <rect x="160" y="135" width="480" height="20" fill="#12284c"/>
+  <!-- tower -->
+  <rect x="360" y="60" width="80" height="95" fill="#d9b48c"/>
+  <polygon points="350,60 400,15 450,60" fill="#12284c"/>
+  <circle cx="400" cy="95" r="20" fill="#fff" stroke="#12284c" stroke-width="3"/>
+  <line x1="400" y1="95" x2="400" y2="82" stroke="#12284c" stroke-width="3"/>
+  <line x1="400" y1="95" x2="410" y2="100" stroke="#12284c" stroke-width="3"/>
+  <!-- door -->
+  <rect x="370" y="215" width="60" height="75" fill="#12284c"/>
+  <!-- windows -->
+  <g fill="#9cc7ff" stroke="#12284c" stroke-width="2">
+    <rect x="210" y="175" width="40" height="50"/><rect x="270" y="175" width="40" height="50"/>
+    <rect x="490" y="175" width="40" height="50"/><rect x="550" y="175" width="40" height="50"/>
+    <rect x="210" y="240" width="40" height="40"/><rect x="270" y="240" width="40" height="40"/>
+    <rect x="490" y="240" width="40" height="40"/><rect x="550" y="240" width="40" height="40"/>
+  </g>
+  <!-- trees -->
+  <g fill="#2f7d3b"><circle cx="110" cy="270" r="34"/><circle cx="700" cy="270" r="34"/></g>
+  <g fill="#6b4a2b"><rect x="106" y="290" width="8" height="30"/><rect x="696" y="290" width="8" height="30"/></g>
+  <text x="400" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">Department of Computer Science</text>
+</svg>
